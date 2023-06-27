@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Description Page</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Fashion Hub</h1>
+  <h2>{{ product['name'] }}</h1>
+  <img src="{{ product['image_url'] }}" alt="Product Image">
+  <p>Description: {{ product['description'] }}</p>
+  <p>Price: {{ product['price'] }}</p>
+  
+  <form method="POST" action="/buy">
+    <input type="hidden" name="product_id" value="{{ product['id'] }}">
+    <button type="submit">Buy Now</button>
+  </form>
+</body>
+</html>
