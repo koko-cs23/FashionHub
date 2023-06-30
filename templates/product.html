@@ -5,15 +5,17 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h1>Fashion Hub</h1>
-  <h2>{{ product['name'] }}</h1>
-  <img src="{{ product['image_url'] }}" alt="Product Image">
-  <p>Description: {{ product['description'] }}</p>
-  <p>Price: {{ product['price'] }}</p>
-  
-  <form method="POST" action="/buy">
-    <input type="hidden" name="product_id" value="{{ product['id'] }}">
-    <button type="submit">Buy Now</button>
-  </form>
+ <div class="container">
+    <h1 class="title">Fashion Hub</h1>
+    <h2 class="product-name">{{ product['name'] }}</h2>
+    <img class="product-image" src="{{ product['image_url'] }}" alt="Product Image">
+    <p class="product-description">Description: {{ product['description'] }}</p>
+    <p class="product-price">Price: {{ product['price'] }}</p>
+
+    <form method="POST" action="/buy">
+      <input type="hidden" name="product_id" value="{{ product['id'] }}">
+      <button type="submit" class="buy-button">Buy Now</button>
+    </form>
+  </div>
 </body>
 </html>

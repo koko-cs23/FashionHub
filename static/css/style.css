@@ -70,3 +70,52 @@ body {
   ::placeholder {
     text-align: center;
   }
+
+.buy-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background-color: #d32f2f;
+}
+
+.product-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-image {
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.product-description {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+
