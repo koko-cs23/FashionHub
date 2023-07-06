@@ -1,7 +1,7 @@
-from flask import Flask, render_template, jsonify, request, make_response
+from flask import Flask, render_template, jsonify, request, redirect
 from models.product_manager import get_products, get_categories, get_products_by_category_id, search_products
+
 from services.send_email import sendCustomerInvoice
-import time
 
 app = Flask(__name__)
 
@@ -16,7 +16,20 @@ def get_product(product_id):
             return product
     return None
 
+# Function to handle mobile users
+def desktop_only_route():
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            user_agent = request.headers.get('User-Agent')
+            if 'Mobile' in user_agent or 'Android' in user_agent or 'iPhone' in user_agent or 'iPad' in user_agent:
+                # Redirect mobile users to a different page
+                return redirect('/mobile-error')
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
+
 @app.route('/', methods=['GET', 'POST'])
+@desktop_only_route()
 def home():
     if request.method == 'POST':
         keyword = request.form.get('keyword')
@@ -59,12 +72,6 @@ def check_payment():
     success = sendCustomerInvoice(payment_data, get_product(product_id))
 
     return jsonify({"success": success})
-  # Timestamp helper function
-@app.context_processor
-def utility_processor():
-    def timestamp():
-        return str(int(time.time()))
-    return dict(timestamp=timestamp)
 
 @app.route('/filter', methods=['POST'])
 def filter():
@@ -76,7 +83,9 @@ def filter():
     # Return the filtered products as a JSON response
     return jsonify(category_products)
 
-
+@app.route('/mobile-error')
+def mobile_error():
+    return "The mobile version of this website has not been created."
 
 if __name__ == '__main__':
     app.run()
