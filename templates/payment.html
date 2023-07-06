@@ -33,18 +33,18 @@
       <div class="box">
         <span>CARD NUMBER</span>
         <input type="text" class="card-number" placeholder="0000 0000 0000 0000">
-        <div id="cardNumberMessage"></div> <!-- Added element for error message -->
+        <div id="cardNumberMessage" class="error-message"></div> <!-- Added element for error message -->
       </div>
       <div class="box-container">
         <div class="box" id="expiry">
           <span>CARD EXPIRY</span>
           <input type="text" class="card-expiry" placeholder="MM/YY">
-          <div id="expiryMessage"></div> <!-- Added element for error message -->
+          <div id="expiryMessage" class="error-message"></div> <!-- Added element for error message -->
         </div>
         <div class="box">
           <span>CVV</span>
           <input type="text" class="cvv" placeholder="123">
-          <div id="cvvMessage"></div> <!-- Added element for error message -->
+          <div id="cvvMessage" class="error-message"></div> <!-- Added element for error message -->
         </div>
       </div>
       <div class="box">
@@ -54,7 +54,7 @@
       <div class="box">
         <span>EMAIL</span>
         <input type="email" class="email" placeholder="Email">
-        <div id="emailMessage"></div> <!-- Added element for error message -->
+        <div id="emailMessage" class="error-message"></div> <!-- Added element for error message -->
       </div>
       <button id="payButton" class="pay-btn" onclick="showPaymentSuccess('paymentSuccess')">Pay</button>
     </div>

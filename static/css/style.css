@@ -299,3 +299,9 @@ form {
   margin: 0;
 }
 
+.box .error-message {
+      color: red;
+      font-size: 10px;
+      margin-left: 5px;            
+}
+
