@@ -85,7 +85,7 @@ def filter():
 
 @app.route('/mobile-error')
 def mobile_error():
-    return "The mobile version of this website has not been created."
+    return render_template('mobile-error.html')
 
 if __name__ == '__main__':
     app.run()

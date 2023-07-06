@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from models.database import FashionHubDatabase
-from models.products_info import products
+#from models.products_info import products
 
 # Load environment variables from .env file
 load_dotenv()
@@ -21,9 +21,9 @@ def initDatabase():
     # Create the tables
     db.create_tables()
     # Add categories
-    categories = ['Women Formal', 'Women Casual', 'Men Formal', 'Men Casual', 'Accessories']
-    for category in categories:
-        db.insert_category(category)
+    #categories = ['Women Formal', 'Women Casual', 'Men Formal', 'Men Casual', 'Accessories']
+    #for category in categories:
+        #db.insert_category(category)
 
 def storeProductsMysql():
     # Save to database
