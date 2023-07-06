@@ -1,2 +1,3 @@
-# Ignore .env file
 .env
+models/products_info.py
+fashionhub.sql

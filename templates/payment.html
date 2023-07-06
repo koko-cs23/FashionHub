@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <title>Payment Dialog Box</title>
+</head>
+<body>
+  <div class="payment-dialog">
+    <div class="nav-bar">
+      <h2>PAY WITH</h2>
+      <ul>
+        <li class="active" onclick="showCardDetails()">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Credit_or_Debit_Card_Flat_Icon_Vector.svg" alt="Card Icon">
+          <span>Card</span>
+        </li>
+        <li onclick="showPopup('notAvailable')">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Iconoir_bank.svg" alt="Bank Icon">
+          <span>Bank</span>
+        </li>
+        <li onclick="showPopup('notAvailable')">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Attraction_transfer_icon.svg" alt="Transfer Icon">
+          <span>Transfer</span>
+        </li>
+        <li onclick="showPopup('notAvailable')">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/FIN_TELECOM.png" alt="USSD Icon">
+          <span>USSD</span>
+        </li>
+      </ul>
+    </div>
+    <div class="main-content active" id="cardDetails">
+      <h3>Enter your card details</h3>
+      <div class="box">
+        <span>CARD NUMBER</span>
+        <input type="text" class="card-number" placeholder="0000 0000 0000 0000">
+        <div id="cardNumberMessage"></div> <!-- Added element for error message -->
+      </div>
+      <div class="box-container">
+        <div class="box" id="expiry">
+          <span>CARD EXPIRY</span>
+          <input type="text" class="card-expiry" placeholder="MM/YY">
+          <div id="expiryMessage"></div> <!-- Added element for error message -->
+        </div>
+        <div class="box">
+          <span>CVV</span>
+          <input type="text" class="cvv" placeholder="123">
+          <div id="cvvMessage"></div> <!-- Added element for error message -->
+        </div>
+      </div>
+      <div class="box">
+        <span>AMOUNT($)</span>
+        <input type="number" placeholder="Amount" value="{{ product['price'] }}" readonly>
+      </div>
+      <div class="box">
+        <span>EMAIL</span>
+        <input type="email" class="email" placeholder="Email">
+        <div id="emailMessage"></div> <!-- Added element for error message -->
+      </div>
+      <button id="payButton" class="pay-btn" onclick="showPaymentSuccess('paymentSuccess')">Pay</button>
+    </div>
+    <div class="main-content" id="notAvailable">
+      <p>Not yet available</p>
+    </div>
+    <div class="main-content" id="paymentSuccess">
+      <p>Payment Successful! Check your mail for confirmation.</p>
+    </div>
+    <div class="main-content" id="paymentFail">
+      <p>Payment failed! Please check the information you provided.</p>
+    </div>
+  </div>
+  <script>
+  var cardNumberInput = document.querySelector('.card-number');
+  var cardNumberMessage = document.getElementById('cardNumberMessage');
+  var expiryInput = document.querySelector('.card-expiry');
+  var expiryMessage = document.getElementById('expiryMessage');
+  var emailInput = document.querySelector('.email');
+  var emailMessage = document.getElementById('emailMessage');
+  var cvvInput = document.querySelector('.cvv');
+  var cvvMessage = document.getElementById('cvvMessage');
+
+
+  cardNumberInput.addEventListener('input', validateCardNumberInput);
+  cardNumberInput.addEventListener('blur', validateCardNumberInput);
+  expiryInput.addEventListener('input', validateExpiryInput);
+  expiryInput.addEventListener('blur', validateExpiryInput);
+  emailInput.addEventListener('input', validateEmailInput);
+  emailInput.addEventListener('blur', validateEmailInput);
+  cvvInput.addEventListener('input', validateCVVInput);
+  cvvInput.addEventListener('blur', validateCVVInput);
+
+  </script>
+  </body>
+</html>
+
