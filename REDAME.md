@@ -1,1 +1,0 @@
-#FashionHub a portfolio project
