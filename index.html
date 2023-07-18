@@ -1,63 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to FashionHub</title>
-    <style>
-        /* Add your CSS styles here to customize the page layout and design */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        /* Add your custom CSS styles here */
-        /* e.g., .header { ... } */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FashionHub</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #c85d7f;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #c85d7f;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .main-content h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #c85d7f;
+      margin-bottom: 15px;
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    /* Why Choose Us */
+    .why-choose-us {
+      margin-bottom: 30px;
+    }
+
+    .why-choose-us li {
+      margin-bottom: 20px;
+    }
+
+    .why-choose-us strong {
+      font-weight: 700;
+    }
+
+    /* Call-to-action */
+    .cta {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .cta p {
+      margin-bottom: 20px;
+    }
+
+    .cta button {
+      padding: 15px 30px;
+      background-color: #c85d7f;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta button:hover {
+      background-color: #a2496d;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #c85d7f;
+      color: #fff;
+    }
+
+  </style>
 </head>
-
 <body>
-    <header class="header">
-        <!-- Add your header content here -->
-        <!-- e.g., navigation menu, logo, etc. -->
-    </header>
+  <header>
+    <h1>Welcome to FashionHub!</h1>
+    <p>Discover the latest trends, embrace your personal style, and redefine fashion with our exclusive collection. Whether you're a trendsetter, a classic lover, or a fashion enthusiast, we have everything you need to express yourself and make a statement.</p>
+  </header>
 
-    <main class="main-content">
-        <section class="hero-section">
-            <!-- Add hero image or banner here -->
-            <h1>Welcome to fashionHub!</h1>
-        </section>
+  <div class="container">
+    <div class="main-content">
+      <div class="image-grid">
+        <img src="https://ucarecdn.com/19550ed8-d5c0-4314-b5e7-2500a814e393/image2.jpg" alt="Fashion Item 1">
+        <img src="https://ucarecdn.com/997ce651-98ad-490d-8f0a-212f1b88835b/image4.jpg" alt="Fashion Item 2">
+        <img src="https://ucarecdn.com/a59c6d79-1baf-412f-bf78-c7d7a7e31712/image14.jpg" alt="Fashion Item 3">
+      </div>
 
-        <section class="why-choose-us">
-            <h2>Why Choose Us?</h2>
-            <ul>
-                <li>Unparalleled Style: Experience a world of fashion at your fingertips...</li>
-                <li>Quality Craftsmanship: We believe that fashion is not just about looking good...</li>
-                <li>Exclusive Designs: Discover exclusive designs that are unavailable elsewhere...</li>
-                <li>Personalized Recommendations: Finding the perfect outfit has never been easier...</li>
-                <li>Hassle-Free Shopping: We strive to provide a seamless shopping experience...</li>
-                <li>Style Inspiration: Looking for inspiration? Visit our blog, where we share the latest fashion tips...</li>
-                <li>Exceptional Customer Service: Your satisfaction is our top priority...</li>
-            </ul>
-        </section>
+      <h2 class="title">Why Choose Us?</h2>
+      <ul class="why-choose-us">
+        <li><strong>Unparalleled Style:</strong> Experience a world of fashion at your fingertips. Our team of fashion experts scours the globe to bring you the most captivating pieces that will elevate your wardrobe. Stay ahead of the fashion curve with our carefully selected collection that reflects the latest runway trends and timeless classics.</li>
+        <li><strong>Quality Craftsmanship:</strong> We believe that fashion is not just about looking good but also feeling confident in what you wear. That's why we prioritize quality craftsmanship in every item we offer. Each garment is crafted with precision and attention to detail, ensuring durability and comfort without compromising style.</li>
+        <li><strong>Exclusive Designs:</strong> Discover exclusive designs that are unavailable elsewhere. We collaborate with talented designers who bring their unique visions to life, offering you one-of-a-kind pieces that will set you apart from the crowd. Be a trendsetter and showcase your individuality with our distinctive selection.</li>
+        <li><strong>Personalized Recommendations:</strong> Finding the perfect outfit has never been easier. Our intuitive website features a personalized recommendation system that suggests styles based on your preferences, body type, and previous purchases. Say goodbye to endless scrolling and let us help you find your next fashion obsession effortlessly.</li>
+        <li><strong>Hassle-Free Shopping:</strong> We strive to provide a seamless shopping experience from start to finish. Our user-friendly website allows you to browse, select, and purchase your favorite pieces with ease. Enjoy secure payment options and reliable worldwide shipping, so you can indulge in fashion without any worries.</li>
+        <li><strong>Style Inspiration:</strong> Looking for inspiration? Visit our blog, where we share the latest fashion tips, style guides, and industry insights. Stay updated with the hottest trends, learn how to mix and match pieces, and discover new ways to express your unique style. Let us be your go-to source for all things fashion-related.</li>
+        <li><strong>Exceptional Customer Service:</strong> Your satisfaction is our top priority. Our dedicated customer support team is ready to assist you with any questions or concerns you may have. We believe in building long-lasting relationships with our customers, and we go above and beyond to ensure your shopping experience is nothing short of exceptional.</li>
+      </ul>
 
-        <section class="explore-collection">
-            <h2>Explore Our Collection</h2>
-            <!-- Add images or product cards to showcase your collection -->
-        </section>
+      <p>Embrace fashion as a form of self-expression and let your style tell your story. Dive into our collection today and unlock a world of limitless possibilities. Elevate your wardrobe, redefine your style, and make a statement with FashionHub.</p>
 
-        <section class="how-it-works">
-            <h2>How It Works</h2>
-            <!-- Add a step-by-step guide or infographic to explain the shopping process -->
-        </section>
-    </main>
+      <div class="cta">
+        <p>Start your fashion journey now!</p>
+        <button onclick="redirectToFashion()">Shop Now</button>
+      </div>
+    </div>
+  </div>
 
-    <footer class="footer">
-        <!-- Add your footer content here -->
-        <!-- e.g., contact information, social media links, etc. -->
-    </footer>
+  <footer>
+    &copy; 2023 FashionHub. All rights reserved.
+  </footer>
+
+  <script>
+    function redirectToFashion() {
+      window.location.href = 'https://fashionhub.denniscode.tech';
+    }
+  </script>
 </body>
-
 </html>
+
