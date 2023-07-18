@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <title>Home of gorgeous fashion apparels</title>
+</head>
+<body>
+    <h1>Fashion Hub</h1>
+    <div class="search-filter-wrapper"><br />
+        <form id="search-form" action="/" method="post">
+            <input type="text" id="search-input" name="keyword" value="{{ request.form.get('keyword', '') }}" placeholder="Search" />
+            <button id="go-input" type="submit">Go</button>
+        </form>
+        <div class="button-group">
+            {% for category in categories %}
+            <button class="filter-button" data-category="{{ category }}">{{ category }}</button>
+            {% endfor %}
+        </div>
+        <div class="image-grid">
+            {% for product in products %}
+            <a href="{{ url_for('product', product_id=product.product_id) }}">
+                <img src="{{ product.image_url }}" alt="Image">
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    </body>
+</html>
+

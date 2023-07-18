@@ -1,0 +1,5 @@
+.env
+models/products_info.py
+fashionhub.sql
+__pycache__/
+services/__pycache__/
