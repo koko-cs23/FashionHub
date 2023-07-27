@@ -74,6 +74,8 @@ function showPaymentSuccess(id) {
             var response = JSON.parse(xhr.responseText);
             document.getElementById('cardDetails').style.display = "none";
             document.getElementById('notAvailable').style.display = "none";
+            
+            
             if (response.success) {
                 var popup = document.getElementById("paymentSuccess");
                 popup.style.display = "flex";
@@ -91,8 +93,10 @@ function showPaymentSuccess(id) {
     var cardNumber = document.querySelector('.card-number').value;
     var cvv = document.querySelector('.cvv').value;
     var expiry = document.querySelector('.card-expiry').value;
+    var amount = document.querySelector('.amount').value;
     var email = document.querySelector('input[type="email"]').value;
-
+    var product_id = document.getElementById('product_id').value;
+    
     var validationPassed = true; // Flag to track overall validation result
 
     if (!validateCardNumber(cardNumber)) {
@@ -133,11 +137,11 @@ function showPaymentSuccess(id) {
 
     xhr.send(
         JSON.stringify({
-            product_id: "{{ product['product_id'] }}",
+            product_id: product_id,
             card_number: cardNumber,
             cvv: cvv,
             expiry: expiry,
-            amount: "{{ product['price'] }}",
+            amount: amount,
             email: email
         })
     );

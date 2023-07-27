@@ -69,7 +69,7 @@ def check_payment():
     amount = payment_data.get('amount')
     email = payment_data.get('email')
 
-    success = sendCustomerInvoice(payment_data, get_product(product_id))
+    success = sendCustomerInvoice(payment_data, get_product(int(product_id)))
 
     return jsonify({"success": success})
 

@@ -49,13 +49,14 @@
       </div>
       <div class="box">
         <span>AMOUNT($)</span>
-        <input type="number" placeholder="Amount" value="{{ product['price'] }}" readonly>
+        <input type="number" class='amount' placeholder="Amount" value="{{ product['price'] }}" readonly>
       </div>
       <div class="box">
         <span>EMAIL</span>
         <input type="email" class="email" placeholder="Email">
         <div id="emailMessage" class="error-message"></div> <!-- Added element for error message -->
       </div>
+      <input type="hidden" id="product_id" name="product_id"  value="{{ product['product_id'] }}">
       <button id="payButton" class="pay-btn" onclick="showPaymentSuccess('paymentSuccess')">Pay</button>
     </div>
     <div class="main-content" id="notAvailable">
